@@ -5,12 +5,54 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Kamran Imam - Links</title>
     </head>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('backgroundPic.jpg'); /* Set background image */
+            background-size: cover; /* Cover the entire body */
+            background-position: center; /* Center the image */
+        }
+        h1 {
+            text-align: center;
+            font-family: Helvetica;
+            color: rgb(150, 223, 244);
+            font-size: 24;
+            font-weight: bold
+        }
+        .centered-list {
+      font-family: Arial;      
+      text-align: center; /* Center the text */
+      list-style-type: disc; /* Change bullet type */
+      padding: 0; /* Remove default padding */
+    }
+
+    .centered-list li {
+      color: rgb(4, 246, 250);
+      display: inline-block; /* Make list items inline */
+      padding: 0 10px; /* Add padding around list items */
+      margin: 0; /* Remove margin */
+    }
+     .centered-list a {
+            text-decoration: underline dashed rbg(150,150,150); /* Remove underline from links */
+            color: inherit; /* Use the color of the list item */
+            padding: 10px 15px; /* Add padding around the link */
+            border: 2px solid rgb(150, 150, 150); /* Add a border */
+            border-radius: 5px; /* Optional: round the corners */
+            background-color: rgba(150, 150, 150);
+            transition: background-color 0.3s, color 0.3s; /* Transition effects */
+        }
+        /* Change background and text color on hover */
+    .centered-list a:hover {
+        background-color: rgba(150, 150, 150, 0.2); /* Light background on hover */
+        color: rgb(150, 150, 150); /* Change text color on hover */
+    }
+    </style>
     <body>
         <header>
             <h1>Kamran Imam</h1>
         </header>
         <nav>
-            <ul>
+            <ul class = centered-list>
                 <li><a href="htmlPracticePortfolio.html">Portfolio</a></li>
                 <li><a href="htmlPracticeResume.html">Resume</a></li>
                 <li><a href="htmlPracticeCoverLetter.html">Cover Letter</a></li>
