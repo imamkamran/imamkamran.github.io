@@ -18,42 +18,42 @@
         <button onclick="appendToResult('8')">8</button>
         <button onclick="appendToResult('9')">9</button>
         <button onclick="appendToResult('/')">/</button>
+        <button onclick="square()">x²</button>
     </div>
     <div>
         <button onclick="appendToResult('4')">4</button>
         <button onclick="appendToResult('5')">5</button>
         <button onclick="appendToResult('6')">6</button>
         <button onclick="appendToResult('*')">*</button>
+        <button onclick="cube()">x³</button>
     </div>
     <div>
         <button onclick="appendToResult('1')">1</button>
         <button onclick="appendToResult('2')">2</button>
         <button onclick="appendToResult('3')">3</button>
         <button onclick="appendToResult('-')">-</button>
+        <button onclick="power()">xʸ</button>
     </div>
     <div>
         <button onclick="appendToResult('0')">0</button>
         <button onclick="appendToResult('.')">.</button>
         <button onclick="calculateResult()">=</button>
         <button onclick="appendToResult('+')">+</button>
-    </div>
-    <div>
-        <button onclick="square()">x²</button>
-        <button onclick="cube()">x³</button>
-        <button onclick="power()">xʸ</button>
         <button onclick="sqrt()">√</button>
     </div>
     <div>
-        <button onclick="cubeRoot()">∛</button>
-        <button onclick="nthRoot()">ʸ√x</button>
         <button onclick="sin()">sin</button>
         <button onclick="cos()">cos</button>
+        <button onclick="tan()">tan</button>
+        <button onclick="appendToResult(Math.PI)">&pi;</button>
+        <button onclick="cubeRoot()">∛</button>
     </div>
     <div>
-        <button onclick="tan()">tan</button>
         <button onclick="arcsin()">arcsin</button>
         <button onclick="arccos()">arccos</button>
         <button onclick="arctan()">arctan</button>
+        <button onclick="inverse()">1/x</button>
+        <button onclick="nthRoot()">ʸ√x</button>
     </div>
 </div>
 
@@ -157,6 +157,11 @@ function factorial() {
         result *= i;
     }
     document.getElementById('result').value = result;
+}
+
+function inverse() {
+    let value = eval(document.getElementById('result').value);
+    document.getElementById('result').value = 1/value;
 }
 
     function appendToResult(value) {
