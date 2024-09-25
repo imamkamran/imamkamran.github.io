@@ -12,7 +12,7 @@ body {
     #calculator {
         background: rgb(255,255,255);
         padding: 5px;
-        width: 50vw;
+        width: 90vw;
         justify-content: space-around;
         align-items: center;
         border-radius: 10px;
@@ -49,3 +49,28 @@ body {
         display: flex;
         justify-content: space-between;
     }
+
+    /* Media Queries for Mobile Portrait Mode */
+@media (max-width: 480px) and (orientation: portrait) {
+    body {
+        justify-content: flex-start; /* Align content to the top */
+        padding-top: 10px; /* Add some top padding */
+    }
+
+    #calculator {
+        width: 95vw; /* Increase width for mobile portrait */
+        padding: 10px; /* Reduce padding */
+        min-height: 80vh; /* Use more vertical space */
+        margin: 0; /* Remove margins */
+    }
+
+    button {
+        flex: 1 1 46%; /* Two buttons per row */
+        padding: 12px; /* Reduce padding for buttons */
+        font-size: 16px; /* Reduce font size */
+    }
+
+    input[type="text"] {
+        font-size: 16px; /* Adjust font size */
+    }
+}
