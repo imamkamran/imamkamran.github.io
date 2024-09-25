@@ -55,6 +55,7 @@ body {
     body {
         justify-content: flex-start; /* Align content to the top */
         padding-top: 10px; /* Add some top padding */
+        min-height: 80vh;
     }
 
     #calculator {
