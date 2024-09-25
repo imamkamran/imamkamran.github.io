@@ -14,21 +14,21 @@
             background-color: rgb(80,80,80);
         }
         #calculator {
-            background: #fff;
+            background: rgb(255,255,255);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         input[type="text"] {
             width: 100%;
-            padding: 10px;
+            padding: 2px;
             margin-bottom: 10px;
             font-size: 18px;
-            border: 1px solid #ddd;
+            border: 1px solid rgb(190, 186, 186);
             border-radius: 5px;
         }
         button {
-            width: 23%;
+            width: 20%;
             padding: 10px;
             margin: 1%;
             font-size: 18px;
@@ -39,7 +39,11 @@
             cursor: pointer;
         }
         button:hover {
-            background-color: rgb(51, 141, 153);
+            background-color: rgb(51, 126, 153);
+        }
+        .button-row {
+            display: flex;
+            justify-content: space-between;
         }
     </style>
 </head>
@@ -70,6 +74,7 @@
     </div>
     <div>
         <button onclick="appendToResult('0')">0</button>
+        <button onclick="appendToResult('.')">.</button>
         <button onclick="calculateResult()">=</button>
         <button onclick="appendToResult('+')">+</button>
     </div>
