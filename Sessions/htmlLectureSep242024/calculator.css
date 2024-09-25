@@ -12,7 +12,7 @@ body {
     #calculator {
         background: rgb(255,255,255);
         padding: 5px;
-        width: 90vw;
+        width: 80vw;
         justify-content: space-around;
         align-items: center;
         border-radius: 10px;
@@ -59,9 +59,9 @@ body {
     }
 
     #calculator {
-        width: 95vw; /* Increase width for mobile portrait */
+        width: 80vw; /* Increase width for mobile portrait */
         padding: 10px; /* Reduce padding */
-        min-height: 80vh; /* Use more vertical space */
+        min-height: 95vh; /* Use more vertical space */
         margin: 0; /* Remove margins */
     }
 
