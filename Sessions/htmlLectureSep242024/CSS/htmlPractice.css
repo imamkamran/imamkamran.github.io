@@ -43,14 +43,20 @@
     background-color: rgba(150, 150, 150, 0.2); /* Light background on hover */
     color: rgb(150, 150, 150); /* Change text color on hover */
 }
-/* Responsive Design */
-@media (min-width: 768px) {
-    .container {
-        flex-direction: row; /* Position title and links side by side */
-        justify-content: space-between; /* Space between title and links */
-        padding: 0 20px;
+/* Responsive Design for Landscape Mode or Larger Screens */
+@media (min-width: 768px) and (orientation: landscape) {
+    .centered-list {
+        flex-direction: row; /* Arrange links in a row */
     }
+
+    .centered-list li {
+        margin: 0 10px; /* Add horizontal spacing between items */
+    }
+}
+
+/* Additional media query for extra small devices */
+@media (max-width: 480px) {
     h1 {
-        font-size: 2.5em; /* Larger title on larger screens */
+        font-size: 1.8em; /* Smaller font size on very small screens */
     }
 }
