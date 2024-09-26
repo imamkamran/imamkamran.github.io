@@ -43,20 +43,32 @@
     background-color: rgba(150, 150, 150, 0.2); /* Light background on hover */
     color: rgb(150, 150, 150); /* Change text color on hover */
 }
-/* Responsive Design for Landscape Mode or Larger Screens */
-@media (min-width: 768px) and (orientation: portrait) {
+/* Responsive Design for Small Screens and Portrait Mode */
+@media (max-width: 768px) {
     .centered-list {
-        flex-direction: column; /* Arrange links in a row */
+        flex-direction: column; /* Stack links vertically */
+        align-items: center; /* Center the links */
+    }
+
+    .centered-list li {
+        width: 100%; /* Make each list item take full width */
+        margin: 15px 0; /* Vertical space between items */
+    }
+
+    .centered-list a {
+        width: 80%; /* Reduce the width of links for better appearance */
+        text-align: center; /* Center text inside links */
     }
 }
 
+/* Responsive Design for Landscape Mode or Larger Screens */
 @media (min-width: 768px) and (orientation: landscape) {
     .centered-list {
         flex-direction: row; /* Arrange links in a row */
     }
 
     .centered-list li {
-        margin: 0 10px; /* Add horizontal spacing between items */
+        margin: 20 10px; /* Add horizontal spacing between items */
     }
 }
 
