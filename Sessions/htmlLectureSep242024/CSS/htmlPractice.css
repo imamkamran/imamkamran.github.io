@@ -44,6 +44,12 @@
     color: rgb(150, 150, 150); /* Change text color on hover */
 }
 /* Responsive Design for Landscape Mode or Larger Screens */
+@media (min-width: 768px) and (orientation: portrait) {
+    .centered-list {
+        flex-direction: column; /* Arrange links in a row */
+    }
+}
+
 @media (min-width: 768px) and (orientation: landscape) {
     .centered-list {
         flex-direction: row; /* Arrange links in a row */
