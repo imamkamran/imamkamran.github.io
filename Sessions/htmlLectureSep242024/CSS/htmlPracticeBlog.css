@@ -48,86 +48,33 @@ p {
     padding: 10px 15px; /* Add padding around the link */
 }
 
-form {
-    background: rgb(200, 200, 200);
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 50%; /* Set a maximum width for the form */
+.carousel {
+    position: relative;
+    max-width: 600px; /* Set the maximum width */
+    margin: auto; /* Center the carousel */
+    overflow: hidden; /* Hide overflow */
 }
 
-/* Felx container for label and input */
-
-.form-group {
-    display: flex;
-    align-items: center; /* Center label vertically with the input */
-    margin-bottom: 15px; /* Add space between fields */
+.carousel-images {
+    display: flex; /* Arrange images in a row */
+    transition: transform 0.5s ease-in-out; /* Smooth transition */
 }
 
-/* Label styling */
-.form-group label {
-    flex: 1; /* Allow the label to grow and take up available space */
-    text-align: right; /* Align label text to the right */
-    padding-right: 10px; /* Space between label and input */
+.carousel-image {
+    min-width: 100%; /* Ensure each image takes full width */
+    display: none; /* Hide all images by default */
 }
 
-/* Input fields styling */
-.form-group input[type="text"], 
-.form-group input[type="email"], 
-.form-group textarea {
-    flex: 2; /* Allow the input field to take up twice the space of the label */
-    padding: 10px;
-    margin: 0; /* Remove margin for better alignment */
-    border: 1px solid rgb(50, 50, 50);
-    border-radius: 5px;
-    box-sizing: border-box; /* Include padding and border in width */
+.carousel-image.active {
+    display: flex; /* Show active image */
 }
 
-/* Textarea specific styling */
-textarea {
-    width: 100%; /* Take full width of the container */
-    resize: vertical; /* Allow vertical resizing */
-}
-
-/* Submit button styling */
-input[type="submit"] {
-    background: rgb(0, 150, 0);
-    color: rgb(255, 255, 255);
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 10%; /* Make the submit button full width */
-    box-sizing: border-box; /* Include padding and border in width */
-    margin: 10px auto; /* 10px space above and below, Centre from left and right */
-    display:flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-}
-
-input[type="submit"]:hover {
-    background: rgb(0, 200, 0);
-}
-
-table {
-    background-color: rgb(200,200,200);
-    border-collapse: collapse;
-    text-align: center;
-    width: 80%;
-    color: rgb(80,80,80)
-}
-
-th    {
-    border: solid;
-}
-
-td    {
-    border: solid;
-}
-
-tr:hover{
-    background-color: rgb(255,255,255)
+.caption {
+    margin-top: 10px; /* Space between images and caption */
+    font-size: 1.2em; /* Caption font size */
+    color: rgb(200, 200, 200); /* Caption text color */
+    text-align: center; /* Center align caption text */
+    padding: 10px; /* Add some padding for aesthetics */
 }
 
 /* Responsive Design for Small Screens and Portrait Mode */

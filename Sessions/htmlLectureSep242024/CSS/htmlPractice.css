@@ -44,6 +44,14 @@
     background-color: rgba(150, 150, 150, 0.2); /* Light background on hover */
     color: rgb(150, 150, 150); /* Change text color on hover */
 }
+
+.gif-container {
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically (if needed) */
+    margin: 100px 0; /* Optional: add some vertical spacing */
+}
+
 /* Responsive Design for Small Screens and Portrait Mode */
 @media (max-width: 768px) {
     .centered-list {
