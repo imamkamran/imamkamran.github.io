@@ -99,7 +99,7 @@ input[type="submit"] {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    width: 10%; /* Make the submit button full width */
+    width: 30%; /* Make the submit button full width */
     box-sizing: border-box; /* Include padding and border in width */
     margin: 10px auto; /* 10px space above and below, Centre from left and right */
     display:flex;
@@ -134,17 +134,17 @@ tr:hover{
 
 /* Responsive Design for Small Screens and Portrait Mode */
 @media (max-width: 768px) {
-    .centered-list {
+    .list {
         flex-direction: column; /* Stack links vertically */
         align-items: center; /* Center the links */
     }
 
-    .centered-list li {
+    .list li {
         width: 100%; /* Make each list item take full width */
         margin: 15px 0; /* Vertical space between items */
     }
 
-    .centered-list a {
+    .list a {
         width: 80%; /* Reduce the width of links for better appearance */
         text-align: center; /* Center text inside links */
     }
@@ -152,11 +152,11 @@ tr:hover{
 
 /* Responsive Design for Landscape Mode or Larger Screens */
 @media (min-width: 768px) and (orientation: landscape) {
-    .centered-list {
+    .list {
         flex-direction: row; /* Arrange links in a row */
     }
 
-    .centered-list li {
+    .list li {
         margin: 20 10px; /* Add horizontal spacing between items */
     }
 }
@@ -165,5 +165,19 @@ tr:hover{
 @media (max-width: 480px) {
     h1 {
         font-size: 1.8em; /* Smaller font size on very small screens */
+    }
+    @media (max-width: 768px) {
+        input[type="submit"] {
+            width: 50%; /* Increase button width on medium screens */
+        }
+    }
+    
+    /* Responsive Design for Small Screens (Mobile Phones) */
+    @media (max-width: 480px) {
+        input[type="submit"] {
+            width: 80%; /* Full-width button on small screens */
+            padding: 12px 20px; /* Increase padding for better touch area */
+            font-size: 1.1em; /* Slightly larger font size */
+        }
     }
 }
