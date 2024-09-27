@@ -73,7 +73,7 @@ p {
 
 .caption {
     margin-top: 10px; /* Space between images and caption */
-    font-size: 1.2em; /* Caption font size */
+    font-size: 0.8em; /* Caption font size */
     color: rgb(200, 200, 200); /* Caption text color */
     text-align: center; /* Center align caption text */
     padding: 10px; /* Add some padding for aesthetics */
