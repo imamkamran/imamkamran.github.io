@@ -30,7 +30,7 @@
     margin: 0; /* Remove margin */
 }
     .centered-list a {
-        text-decoration: underline dashed rbg(150,150,150); /* Remove underline from links */
+        text-decoration: underline dashed rbg(150,150,150); /* Underline links */
         color: inherit; /* Use the color of the list item */
         padding: 10px 15px; /* Add padding around the link */
         border: 2px solid rgb(150, 150, 150); /* Add a border */
@@ -38,6 +38,7 @@
         background-color: rgba(150, 150, 150);
         transition: background-color 0.3s, color 0.3s; /* Transition effects */
     }
+    
     /* Change background and text color on hover */
 .centered-list a:hover {
     background-color: rgba(150, 150, 150, 0.2); /* Light background on hover */
