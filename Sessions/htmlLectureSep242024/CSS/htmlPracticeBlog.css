@@ -81,17 +81,17 @@ p {
 
 /* Responsive Design for Small Screens and Portrait Mode */
 @media (max-width: 768px) {
-    .centered-list {
+    .list {
         flex-direction: column; /* Stack links vertically */
         align-items: center; /* Center the links */
     }
 
-    .centered-list li {
+    .list li {
         width: 100%; /* Make each list item take full width */
         margin: 15px 0; /* Vertical space between items */
     }
 
-    .centered-list a {
+    .list a {
         width: 80%; /* Reduce the width of links for better appearance */
         text-align: center; /* Center text inside links */
     }
@@ -99,11 +99,11 @@ p {
 
 /* Responsive Design for Landscape Mode or Larger Screens */
 @media (min-width: 768px) and (orientation: landscape) {
-    .centered-list {
+    .list {
         flex-direction: row; /* Arrange links in a row */
     }
 
-    .centered-list li {
+    .list li {
         margin: 20 10px; /* Add horizontal spacing between items */
     }
 }
