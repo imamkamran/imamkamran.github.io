@@ -1,9 +1,11 @@
 body {
     background-image: url('backgroundPic2.jpg'); /* Set background image */
     background-size: cover;
+    background-position: center; /* Center the image */
     background-repeat: no-repeat;
     height: 100vh;
     font-family: Helvetica;
+    margin: 0;
 }
 header {
     display: flex;
