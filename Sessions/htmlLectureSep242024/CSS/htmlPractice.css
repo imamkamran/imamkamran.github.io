@@ -1,20 +1,192 @@
     body {
-        background-image: url('backgroundPic.jpg'); /* Set background image */
+        background-color: #2d2d2d;
         background-size: cover; /* Cover the entire body */
         background-position: center; /* Center the image */
         background-repeat: no-repeat;
         height: 100vh; /* Set height to 100% of viewport height */
         margin: 0; /* Remove default margin */
+        transition: all 5s ease-in-out;
     }
     h1 {
         text-align: center;
-        font-family: Helvetica;
-        color: rgb(150, 223, 244);
+        font-family: serif;
+        color: #ededed;
         font-size: 24;
         font-weight: bold
     }
+
+    h2 {
+        text-align: left;
+        font-family: serif;
+        color: #ededed;
+    }
+    p {
+        color: #ededed;
+        font-family: serif;
+    }
+    
+    /* Center the logo initially */
+    .logo-container {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    .logo {
+        width: 50px;
+        height: auto;
+        cursor: pointer; 
+    }
+
+    .links-container {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background-color: #2d2d2d;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+      
+      .links-container.show {
+        display: block;
+      }
+
+      .links li {
+        list-style: none;
+        margin-bottom: 5px;
+      }
+      
+      .links a {
+        text-decoration: none;
+        color: #ededed;
+      }
+
+    .content {
+        text-align: center;
+        opacity: 0;
+        transform: translateY(100%); /* Initially off the screen */
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+
+    .logo.top-right {
+        top: 20px;
+        left: 20px;
+        width: 50px; /* Smaller size after move */
+    }    
+
+    .list {
+        font-family: serif;      
+        text-align: center; /* Center the text */
+        list-style-type: disc; /* Change bullet type */
+        padding: 0; /* Remove default padding */
+        display: flex;
+        flex-wrap: wrap; /* Wrap links on smaller screens */
+        justify-content: left; /* Center links */
+        color: #ededed;
+    }
+    
+    .list li {
+        background-color: #2d2d2d;
+        color: #ededed;
+        display: flex; /* Make list items inline */
+        padding: 0 10px; /* Add padding around list items */
+        margin: 0; /* Remove margin */
+    }
+    
+    .list a {
+        text-decoration: underline dashed rbg(150,150,150); /* Underline links */
+        color: inherit; /* Use the color of the list item */
+        padding: 10px 15px; /* Add padding around the link */
+    }
+    
+    form {
+        background: #ededed;
+        font-family: serif;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 50%; /* Set a maximum width for the form */
+    }
+    
+    /* Felx container for label and input */
+    
+    .form-group {
+        display: flex;
+        align-items: center; /* Center label vertically with the input */
+        margin-bottom: 15px; /* Add space between fields */
+    }
+    
+    /* Label styling */
+    .form-group label {
+        flex: 1; /* Allow the label to grow and take up available space */
+        text-align: right; /* Align label text to the right */
+        padding-right: 10px; /* Space between label and input */
+    }
+    
+    /* Input fields styling */
+    .form-group input[type="text"], 
+    .form-group input[type="email"], 
+    .form-group textarea {
+        flex: 2; /* Allow the input field to take up twice the space of the label */
+        padding: 10px;
+        margin: 0; /* Remove margin for better alignment */
+        border: 1px solid rgb(50, 50, 50);
+        border-radius: 5px;
+        box-sizing: border-box; /* Include padding and border in width */
+    }
+    
+    /* Textarea specific styling */
+    textarea {
+        width: 100%; /* Take full width of the container */
+        resize: vertical; /* Allow vertical resizing */
+    }
+    
+    /* Submit button styling */
+    input[type="submit"] {
+        background: rgb(0, 150, 0);
+        color: rgb(255, 255, 255);
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 30%; /* Make the submit button full width */
+        box-sizing: border-box; /* Include padding and border in width */
+        margin: 10px auto; /* 10px space above and below, Centre from left and right */
+        display:flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    input[type="submit"]:hover {
+        background: rgb(0, 200, 0);
+    }
+    
+    table {
+        background-color: #ededed;
+        font-family: serif;
+        border-collapse: collapse;
+        text-align: center;
+        width: 80%;
+        color: #2d2d2d
+    }
+    
+    th    {
+        border: solid;
+    }
+    
+    td    {
+        border: solid;
+    }
+    
+    tr:hover{
+        background-color: rgb(255,255,255)
+    }
+
     .centered-list {
-    font-family: Arial;      
+    font-family: serif;      
     text-align: center; /* Center the text */
     list-style-type: disc; /* Change bullet type */
     padding: 0; /* Remove default padding */
@@ -24,32 +196,24 @@
 }
 
 .centered-list li {
-    color: rgb(4, 246, 250);
+    color: #ededed;
     display: inline-block; /* Make list items inline */
     padding: 0 10px; /* Add padding around list items */
     margin: 0; /* Remove margin */
 }
     .centered-list a {
-        text-decoration: underline dashed rbg(150,150,150); /* Underline links */
+        text-decoration: #2d2d2d; /* Underline links */
         color: inherit; /* Use the color of the list item */
         padding: 10px 15px; /* Add padding around the link */
-        border: 2px solid rgb(150, 150, 150); /* Add a border */
         border-radius: 5px; /* Optional: round the corners */
-        background-color: rgba(150, 150, 150);
+        background-color: #2d2d2d;
         transition: background-color 0.3s, color 0.3s; /* Transition effects */
     }
     
     /* Change background and text color on hover */
 .centered-list a:hover {
-    background-color: rgba(150, 150, 150, 0.2); /* Light background on hover */
-    color: rgb(150, 150, 150); /* Change text color on hover */
-}
-
-.gif-container {
-    display: flex; /* Use flexbox for centering */
-    justify-content: center; /* Center items horizontally */
-    align-items: center; /* Center items vertically (if needed) */
-    margin: 100px 0; /* Optional: add some vertical spacing */
+    background-color: #ededed; /* Light background on hover */
+    color: #2d2d2d; /* Change text color on hover */
 }
 
 /* Responsive Design for Small Screens and Portrait Mode */
