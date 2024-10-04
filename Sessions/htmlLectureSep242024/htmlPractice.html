@@ -75,6 +75,7 @@
                 <li><a href="https://www.linkedin.com/in/kamran-imam">LinkedIn</a></li>
             </ul>
         </div>
+        <!--JavaScript to for Menu hamburger for smaller screens-->
         <script>
             function toggleMenu() {
                 var menu = document.getElementById("menu");
@@ -84,6 +85,20 @@
                     menu.classList.add("show-menu");
                 }
             }
+        </script>
+        <!--JavaScript to for changing welcome message for smaller screens-->
+        <script>
+            function updateHeading() {
+                var heading = document.querySelector("h1");
+                if (window.innerWidth < 500) {
+                    heading.textContent = "Welcome"; // Change to "Welcome"
+                } else {
+                    heading.textContent = "Welcome to my page!"; // Revert back to original when screen size increases
+                }
+            }
+            // Run the function on load and on resize
+            window.onload = updateHeading;
+            window.onresize = updateHeading;
         </script>
     </body>
 </html>
