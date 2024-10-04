@@ -11,13 +11,17 @@
             <img src="CSS/Logo-dark.png" alt="Logo" class="logo"/>
         </div>
         <header>
-            <h1>Getting to know Kamran</h1>
+            <h1>Welcome to my page!</h1>
         </header>
-        <h2> About Me </h2>
-        <p>Welcome to my page! </p>
-        <p>I am Kamran, a Petroleum Engineer turned Data Scientist.</p>
-        <p>I love anything analytics and numbers. So I love to spend time crunching numbers and drawing analytics (often menaingless!!! &#x1F62C).</p>
-        <h2>Skills and Tools</h2>
+        <p>I am Kamran, an Engineer turned Data Scientist turned Developer, working as a freelance consultant.
+            I have 15 years of diverse experience in engineering operations, techncial analysis, financial evaluations and project management.
+            A licensed professional engineer (APEGA), designated Chartered Engineer (Engineers Council, UK) and a certified Project Management Professional (PMI) with passion
+           for anything with numbers and analytics.</p>
+           <p><br></p>
+        <h2>Areas of expertise</h2>
+        <p>Oil and gas, data science and analytics, predictive modeling, statistical analysis, data visualization, autonomous operational control.</p>
+        <p><br></p>
+        <h2>Skills and tools</h2>
         <table>
             <tr>
                 <th>S.No</th>
@@ -35,20 +39,10 @@
             </tr>
         </table>
         <p>In my free time I work as an unpaid Uber driver aka 
-           <strong style="color: rgb(240, 200, 80)">Dad</strong> to my 10 old son and 3 year old daughter.</p>
-        <p>I like to go in nature and spend time in the mountains. That's a reason I love living in Calgary.
-           Despite, it's notorious climate, the city is just a stone's throw away from the majestic
-           Canadian Rockies &#x1F60D
+           <strong style="color: rgb(240, 200, 80)">Dad</strong> to my 10 old son and 3 year old daughter. I like to go in nature and spend time in the mountains.
+           That's a reason I love living in Calgary. Despite, it's notorious climate, the city is just a stone's throw away from the majesticCanadian Rockies &#x1F60D
         </p>
         <h2>Contact Me</h2>
-        <p>I don't have any data pipeline setup to store your info and feedback but still feel free to leave a message.</p>
-        <p></p>
-        <script>
-            // Function to show alert message
-            function submissionMessage() {
-                alert("How gullible \u{1F608}");
-            }
-        </script>
         <form onsubmit="submissionMessage(); return false;">
             <label for="name">Name<sup style="color: red;">*</sup>:</label>
             <input type="text" id="name" name="name" placeholder="Your name (required)" required><br><br>
@@ -61,6 +55,12 @@
 
             <input type="submit" value="Submit">
         </form>
+        <!-- Hamburger menu for small screens -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
         <div class = "links-container">
             <ul class = links>
                 <li><a href="htmlPracticePortfolio.html">Portfolio</a></li>
@@ -68,5 +68,22 @@
                 <li><a href="https://www.linkedin.com/in/kamran-imam">LinkedIn</a></li>
             </ul>
         </div>
+        <div class="links-container-small" id="menu">
+            <ul>
+                <li><a href="htmlPracticePortfolio.html">Portfolio</a></li>
+                <li><a href="htmlPracticeBlog.html">Blog</a></li>
+                <li><a href="https://www.linkedin.com/in/kamran-imam">LinkedIn</a></li>
+            </ul>
+        </div>
+        <script>
+            function toggleMenu() {
+                var menu = document.getElementById("menu");
+                if (menu.classList.contains("show-menu")) {
+                    menu.classList.remove("show-menu");
+                } else {
+                    menu.classList.add("show-menu");
+                }
+            }
+        </script>
     </body>
 </html>
