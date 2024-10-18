@@ -5,23 +5,59 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Kamran Imam - Links</title>
         <link rel="stylesheet" href="CSS/htmlPractice.css" />
-        <!-- Font Awesome link -->
         <script src="https://kit.fontawesome.com/8c4c5721e9.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <div class="logo-container">
-            <img src="CSS/Logo-dark.png" alt="Logo" class="logo"/>
+         <!-- Hamburger menu for small screens -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
         <header>
-            <h1>Welcome to my page!</h1>
+            <div class="logo-container">
+                <img src="CSS/Logo-dark.png" alt="Logo" class="logo"/>
+            </div>
+            <div class = "links-container">
+                <ul class = links>
+                    <li class="dropdown">
+                        <a href="htmlPracticePortfolio.html">Portfolio</a>
+                        <ul class="dropdown-content">
+                            <li><a href="calculator.html">Calculator</a></li>
+                        </ul>
+                        </li>
+                    <li><a href="htmlPracticeBlog.html">Blog</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
         </header>
-        <p>I am Kamran, an Engineer turned Data Scientist turned Developer, working as a freelance consultant.
-            I have 15 years of diverse experience in engineering operations, techncial analysis, financial evaluations and project management.
-            A licensed professional engineer (APEGA), designated Chartered Engineer (Engineers Council, UK) and a certified Project Management Professional (PMI) with passion
-           for anything with numbers and analytics.</p>
-           <p><br></p>
-        <h2>Areas of expertise</h2>
-        <p>Oil and gas, data science and analytics, predictive modeling, statistical analysis, data visualization, autonomous operational control.</p>
+        <div class="links-container-small" id="menu">
+            <ul>
+                <li class="dropdown">
+                    <a href="htmlPracticePortfolio.html" onclick="toggleDropdown(event)">Portfolio</a>
+                    <ul class="dropdown-content">
+                        <li><a href="calculator.html">Calculator</a></li>
+                    </ul>
+                </li>
+                <li><a href="htmlPracticeBlog.html">Blog</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <h1>I am Kamran Imam</h1>
+        <h1>
+            <strong style="color: #0398b3">an Engineer a Data Scientist and a Developer,</strong>
+        </h1>
+        <h3> With almost 15 years of expereince, I bring a rich background in optimizing production, estimating
+            reserves, and leveraging advanced analytics to drive operational improvements.
+            <br><br>
+            I've harnessed the power of data-driven insights to enhance production efficiencies, reduce greenhouse
+            gas emissions, and streamline decision-making processes.
+            <br><br>
+            From autonomous operational control to developing predictive models for economic evaluations to leading cross-functional technical evaluations,
+            I am passionate about using technology to solve complex problems and improve business outcomes.
+        </h3>
         <p><br><br><br><br><br><br><br><br><br><br></p>
         <div class="skills-container">
             <div class="techSkills-container">
@@ -32,7 +68,7 @@
                         <span class="skill-text">Developing expertise in React.js</span>
                     </li>
                     <li id="node">
-                        <i class="fab fa-node" style="font-size: 48px;"></i>
+                        <i class="fab fa-node" style="font-size: 42px; color: black; width: 48px; height: 72px"></i>
                         <span class="skill-text">Developing expertise in Node.js</span>
                     </li>
                     <li id="mongo">
@@ -40,7 +76,7 @@
                         <span class="skill-text">Developing expertise in MongoDB</span>
                     </li>
                     <li id="github">
-                        <i class="fab fa-github" style="font-size: 48px;"></i>
+                        <i class="fab fa-github" style="font-size: 48px; color: black"></i>
                         <span class="skill-text">Proficient in code version control</span>
                     </li>
                     <li id="html">
@@ -52,52 +88,17 @@
                         <span class="skill-text">Excellent knowledge in CSS</span>
                     </li>
                     <li id="js">
-                        <i class="fab fa-js" style="font-size: 36px"></i>
+                        <i class="fab fa-js" style="font-size: 44px; color: black; width:42px; height: 100px"></i>
                         <span class="skill-text">Adept in JS</span>
                     </li>
                     <li id="jira">
-                        <img src="icons/jira.svg" style="width: 48px; height: 48px">
+                        <img src="icons/jira.svg" style="width: 34px; height: 50px">
                         <span class="skill-text">Strong knowledge of project management using JIRA</span>
                     </li>
                 </ul>
             </div>
-            <div class="engSkills-container">
-                <div class="engSkills-centered">Eng Skills</div>
-                <ul id="engSkills-list">
-                    <li id="reservesEstimation">
-                        <img src="icons/cumProbDist.jpg" style="width: 48px; height: 48px; display: block;">
-                        <div>Reserves Estimation</div>
-                        <span class="skill-text">Proficient in reserves estimation as per SPE-PRMS guidelines</span>
-                    </li>
-                    <li id="rtapta">
-                        <img src="icons/rtapta.svg" style="width: 48px; height: 48px;">
-                        <div>RTA-PTA</div>
-                        <span class="skill-text">Expert in reservoir characterization bsaed on RTA and PTA</span>
-                    </li>
-                    <li id="dca">
-                        <img src="icons/dca.svg" style="width: 48px; height: 48px;">
-                        <div>DCA</div>
-                        <span class="skill-text">Excellent knowledge of DCA and production forecasting</span>
-                    </li>
-                    <li id="numericalSimulation">
-                        <img src="icons/Simulation.jpg" style="width: 72px; height: 72px;">
-                        <div>Numerical Simulation</div>
-                        <span class="skill-text">Vast experience in develoing 3D simulation model using both black oil and compositional modeling</span>
-                    </li>
-                    <li id="economics">
-                        <img src="icons/econAnalysis.png" style="width: 48px; height: 48px;">
-                        <div>Economic Evaluation</div>
-                        <span class="skill-text">Strong exposure of economic evalautions of capital projects and M&A opportunities</span>
-                    </li>
-                    <li id="projectManagement">
-                        <img src="icons/projMgmt.svg" style="width: 48px; height: 48px; background-color: #ededed;">
-                        <div>Project Management</div>
-                        <span class="skill-text">Adept in project management with both waterfall and agile frameworks</span>
-                    </li>
-                </ul>
-            </div>
             <div class="dsSkills-container">
-                <div class="dsSkills-centered">DS Skills</div>
+                <div class="dsSkills-centered">Data Science Skills</div>
                 <ul id="dsSkills-list">
                     <li id="python">
                         <img src="icons/python.svg" style="width: 48px; height: 48px">
@@ -120,64 +121,169 @@
                         <span class="skill-text">Experienced in snowflake database</span>
                     </li>
                     <li id="spotfire">
-                        <img src="icons/spotfire.svg" style="width: 100px; height: 48px">
+                        <img src="icons/spotfire.svg" style="width: 48px; height: 48px; font-size: 48;">
                         <span class="skill-text">Advanced user of Spotfire</span>
                     </li>
                     <li id="tableau">
-                        <img src="icons/tableau.svg" style="width: 100px; height: 48px; background-color: #ededed;">
+                        <img src="icons/tableau.svg" style="width: 48px; height: 48px; font-size: 48;">
                         <span class="skill-text">Adept at data visualization and storytelling using Tableau</span>
                     </li>
                 </ul>
             </div>
         </div>
-        <p><br><br><br></p>
-        <p>In my free time I work as an unpaid Uber driver aka 
-           <strong style="color: rgb(240, 200, 80)">Dad</strong> to my 10 old son and 3 year old daughter. I like to go in nature and spend time in the mountains.
-           That's a reason I love living in Calgary. Despite, it's notorious climate, the city is just a stone's throw away from the majestic Canadian Rockies &#x1F60D
-        </p>
-        <h2>Contact Me</h2>
-        <form onsubmit="submissionMessage(); return false;">
-            <label for="name">Name<sup style="color: red;">*</sup>:</label>
-            <input type="text" id="name" name="name" placeholder="Your name (required)" required><br><br>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Your email (optional)" optional><br><br>
-
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" placeholder="Your message (recommended)" recommended></textarea><br><br>
-
-            <input type="submit" value="Submit">
-        </form>
-        <!-- Hamburger menu for small screens -->
-        <div class="hamburger" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div class = "links-container">
-            <ul class = links>
-                <li class="dropdown">
-                    <a href="htmlPracticePortfolio.html">Portfolio</a>
-                    <ul class="dropdown-content">
-                        <li><a href="calculator.html">Calculator</a></li>
-                    </ul>
-                    </li>
-                <li><a href="htmlPracticeBlog.html">Blog</a></li>
-                <li><a href="https://www.linkedin.com/in/kamran-imam">LinkedIn</a></li>
-            </ul>
-        </div>
-        <div class="links-container-small" id="menu">
-            <ul>
-                <li class="dropdown">
-                    <a href="htmlPracticePortfolio.html" onclick="toggleDropdown(event)">Portfolio</a>
-                    <ul class="dropdown-content">
-                        <li><a href="calculator.html">Calculator</a></li>
-                    </ul>
+        <p><br><br><br><br><br><br></p>
+        <div class="headings">Engineering Skills</div>
+        <div class="engSkills-container">
+            <br><br><br><br><br><br><br><br><br><br>
+            <ul id="engSkills-list">
+                <li id="reservesEstimation">
+                    <div class="skill-container">
+                        <div class="skill-name">Reserves Estimation</div>
+                        <div class="skill-bar">
+                            <div class="fill" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                    <span class="skill-text">Proficient in reserves estimation as per SPE-PRMS guidelines</span>
                 </li>
-                <li><a href="htmlPracticeBlog.html">Blog</a></li>
-                <li><a href="https://www.linkedin.com/in/kamran-imam">LinkedIn</a></li>
+                <br><br><br>
+                <li id="dca">
+                    <div class="skill-container">
+                        <div class="skill-name">Decline Curve Analysis</div>
+                        <div class="skill-bar">
+                            <div class="fill" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                    <span class="skill-text">Excellent knowledge of DCA and production forecasting</span>
+                </li>
+                <br><br><br>
+                <li id="rtapta">
+                    <div class="skill-container">
+                        <div class="skill-name">Rate and Pressure Transient Analysis</div>
+                        <div class="skill-bar">
+                            <div class="fill" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <span class="skill-text">Expert in reservoir characterization bsaed on RTA and PTA</span>
+                </li>
+                <br><br><br>
+                <li id="numericalSimulation">
+                    <div class="skill-container">
+                        <div class="skill-name">Numerical Simulation</div>
+                        <div class="skill-bar">
+                            <div class="fill" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    <span class="skill-text">Vast experience in develoing 3D simulation model using both black oil and compositional modeling</span>
+                </li>
+                <br><br><br>
+                <li id="wellModeling">
+                    <div class="skill-container">
+                        <div class="skill-name">Well Modeling</div>
+                        <div class="skill-bar">
+                            <div class="fill" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                    <span class="skill-text">Extensive experience in well modeling</span>
+                </li>
+                <br><br><br>
+                <li id="iam">
+                    <div class="skill-container">
+                        <div class="skill-name">Integrated Asset Modeling</div>
+                        <div class="skill-bar">
+                            <div class="fill" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    <span class="skill-text">Strong exposure of developing fully integrated asset models</span>
+                </li>
+                <br><br><br>
+                <li id="economics">
+                    <div class="skill-container">
+                        <div class="skill-name">Economic Evaluation Asset Valuation</div>
+                        <div class="skill-bar">
+                            <div class="fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <span class="skill-text">Strong exposure of economic evalautions of capital projects and M&A opportunities</span>
+                </li>
+                <br><br><br>
+                <li id="projectManagement">
+                    <div class="skill-container">
+                        <div class="skill-name">Project Management</div>
+                        <div class="skill-bar">
+                            <div class="fill" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <span class="skill-text">Adept in project management with both waterfall and agile frameworks</span>
+                </li>
+                <br><br><br>
             </ul>
         </div>
+        <br><br><br>
+        <div id="licenses">
+            <div class="headings">Licences and Certificates</div>
+            <div class="license-container">
+                <div class="license-tile">
+                    <div class="license-title">Professional Engineer (P.Eng)</div>
+                    <span class="license-text">Licensed professional engineer from Association of Professional Engineers and Geoscientists Alberta.</span>
+                </div>
+                <div class="license-tile">
+                    <div class="license-title">Chartered Engineer (C.Eng)</div>
+                    <span class="license-text">Registered Chartred Engineer with Energy Institute licensed under Engineering Council, UK.</span>
+                </div>
+                <div class="license-tile">
+                    <div class="license-title">Project Management Professional (PMP)</div>
+                    <span class="license-text">Certified project management professional from Project Management Insititute (PMI), USA.</span>
+                </div>
+            </div>
+        </div>
+        <br><br><br>
+        <div id="services">
+            <div class="headings">Services Offered</div>
+            <div class="carousel-container">
+                <div class="carousel-slide" style="background-image: url('icons/reservesEstimation.jpeg');">
+                    <div class="carousel-text">Reserves Estimation</div>
+                </div>
+                <div class="carousel-slide" style="background-image: url('icons/projMgmt.jpeg');">
+                    <div class="carousel-text">Project Management</div>
+                </div>
+                <div class="carousel-slide" style="background-image: url('icons/dsAnalytics.jpeg');">
+                    <div class="carousel-text">Data Science & Analytics</div>
+                </div>
+                <div class="carousel-slide" style="background-image: url('icons/predictiveModel.jpeg');">
+                    <div class="carousel-text">Predictive & Statistical Modeling</div>
+                </div>
+                <div class="carousel-slide" style="background-image: url('icons/ml.jpeg');">
+                    <div class="carousel-text">Machine Learning Models</div>
+                </div>
+            </div>
+        </div>
+        <br><br><br>
+        <div id="contact">
+            <h2>Contact Me</h2>
+            <form onsubmit="submissionMessage(); return false;">
+                <label for="name"></label>
+                <input type="text" class="inputFields" id="name" name="name" placeholder="Your name (required)" required><br><br>
+
+                <label for="email"></label>
+                <input type="email" class="inputFields" id="email" name="email" placeholder="Your email (optional)" optional><br><br>
+
+                <label for="message"></label>
+                <textarea id="message" class="inputFields" name="message" rows="4" placeholder="Your message (recommended)" recommended></textarea><br><br>
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <button id="backToTop" onclick="scrollToTop()">↑ Back to Top</button>
+        <footer>
+            <div class="footer-content">
+                <a href="https://www.linkedin.com/in/kamran-imam" target="_blank">
+                    <i class="fab fa-linkedin" style="font-size: 48px; color:#0398b3" alt="LinkedIn"></i>
+                </a>
+                <a href="https://github.com/imamkamran/imamkamran.github.io" target="_blank">
+                    <i class="fab fa-github" style="font-size: 48px; color: #0398b3" alt="GitHub"></i>
+                </a>
+            </div>
+        </footer>
     <script src="mainPage.js"></script>
     </body>
 </html>

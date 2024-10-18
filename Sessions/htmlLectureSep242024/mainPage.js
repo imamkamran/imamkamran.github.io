@@ -7,19 +7,31 @@
             menu.classList.add("show-menu");
         }
     }
-//JavaScript to for changing welcome message for smaller screens
 
-    function updateHeading() {
-        var heading = document.querySelector("h1");
-        if (window.innerWidth < 500) {
-            heading.textContent = "Welcome"; // Change to "Welcome"
-        } else {
-            heading.textContent = "Welcome to my page!"; // Revert back to original when screen size increases
-        }
+// Javascript for carousel of services offered
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            if (i === index) {
+                slide.classList.add('active');
+            }
+        });
     }
-    // Run the function on load and on resize
-    window.onload = updateHeading;
-    window.onresize = updateHeading;
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    // Show the first slide
+    showSlide(currentSlide);
+
+    // Change slide every 3 seconds
+    setInterval(nextSlide, 3000);
+
 
 // JavaScript for clicking on Menu to get the link for Portfolio pages
 
@@ -32,47 +44,57 @@
 
 // JavaScript to arrange skills in a circle
 
-    const techSkillsItems = document.querySelectorAll('#techSkills-list li');
-    const engSkillsItems = document.querySelectorAll('#engSkills-list li');
-    const dsSkillsItems = document.querySelectorAll('#dsSkills-list li');
+const techSkillsItems = document.querySelectorAll('#techSkills-list li');
+const dsSkillsItems = document.querySelectorAll('#dsSkills-list li');
 
-    // Calculate and position each tech icon around the circle
-    const radiusTech = 200; // Radius of the circle
-    const centerXTech = 150; // Center X of the container
-    const centerYTech = 150; // Center Y of the container
-    const radiusEng = 220;
-    const centerXEng = 450; // Center X of the container
-    const centerYEng = 150; // Center Y of the container
-    const radiusDS = 200;
-    const centerXDS = 650; // Center X of the container
-    const centerYDS = 150; // Center Y of the container
-    const totalTechSkills = techSkillsItems.length;
-    const totalEngSkills = engSkillsItems.length;
-    const totalDsSkills = dsSkillsItems.length;
+// Calculate and position each tech icon around the circle
+const radiusTech = 200; // Radius of the circle
+const centerXTech = 250; // Center X of the container
+const centerYTech = 150; // Center Y of the container
+const radiusDS = 200;
+const centerXDS = 650; // Center X of the container
+const centerYDS = 150; // Center Y of the container
+const totalTechSkills = techSkillsItems.length;
+const totalDsSkills = dsSkillsItems.length;
 
-    techSkillsItems.forEach((item, index) => {
-        const angle = (index / totalTechSkills) * (2 * Math.PI); // Calculate the angle for each item
-        const xTech = centerXTech + radiusTech * Math.cos(angle) - item.offsetWidth / 2;
-        const yTech = centerYTech + radiusTech * Math.sin(angle) - item.offsetHeight / 2;
+// Function to position items in a circle
+function positionItemsInCircle(items, centerX, centerY, radius) {
+    const totalItems = items.length;
 
-        item.style.left = `${xTech}px`;
-        item.style.top = `${yTech}px`;
+    items.forEach((item, index) => {
+        // Calculate the angle for each item
+        const angle = (index / totalItems) * (2 * Math.PI); 
+        // Calculate x and y positions
+        const x = centerX + radius * Math.cos(angle) - item.offsetWidth / 2;
+        const y = centerY + radius * Math.sin(angle) - item.offsetHeight / 2;
+
+        // Set the position of the item
+        item.style.position = 'absolute'; // Ensure items are positioned absolutely
+        item.style.left = `${x}px`;
+        item.style.top = `${y}px`;
     });
+}
 
-    engSkillsItems.forEach((item, index) => {
-        const angle = (index / totalEngSkills) * (2 * Math.PI); // Calculate the angle for each item
-        const xEng = centerXEng + radiusEng * Math.cos(angle) - item.offsetWidth / 2;
-        const yEng = centerYEng + radiusEng * Math.sin(angle) - item.offsetHeight / 2;
+// Position the tech skills items
+positionItemsInCircle(techSkillsItems, centerXTech, centerYTech, radiusTech);
 
-        item.style.left = `${xEng}px`;
-        item.style.top = `${yEng}px`;
+// Position the Data Science skills items
+positionItemsInCircle(dsSkillsItems, centerXDS, centerYDS, radiusDS);
+
+// Show or hide the button based on scroll position
+window.onscroll = function () {
+    const backToTopButton = document.getElementById("backToTop");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        backToTopButton.classList.add("show");
+    } else {
+        backToTopButton.classList.remove("show");
+    }
+};
+
+// Smooth scroll to the top when the button is clicked
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
     });
-
-    dsSkillsItems.forEach((item, index) => {
-        const angle = (index / totalDsSkills) * (2 * Math.PI); // Calculate the angle for each item
-        const xDS = centerXDS + radiusDS * Math.cos(angle) - item.offsetWidth / 2;
-        const yDS = centerYDS + radiusDS * Math.sin(angle) - item.offsetHeight / 2;
-
-        item.style.left = `${xDS}px`;
-        item.style.top = `${yDS}px`;
-    });
+}
