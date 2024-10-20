@@ -44,16 +44,23 @@
 
 // JavaScript to arrange skills in a circle
 
-const techSkillsItems = document.querySelectorAll('#techSkills-list li');
-const dsSkillsItems = document.querySelectorAll('#dsSkills-list li');
+const techSkillsItems = document.querySelectorAll('.techSkills-list li');
+const dsSkillsItems = document.querySelectorAll('.dsSkills-list li');
 
 // Calculate and position each tech icon around the circle
-const radiusTech = 200; // Radius of the circle
-const centerXTech = 250; // Center X of the container
-const centerYTech = 150; // Center Y of the container
-const radiusDS = 200;
-const centerXDS = 650; // Center X of the container
-const centerYDS = 150; // Center Y of the container
+const techSkillsContainer = document.querySelector('.techSkills-container');
+const dsSkillsContainer = document.querySelector('.dsSkills-container');
+const techContainerRect = techSkillsContainer.getBoundingClientRect();
+const dsContainerRect = dsSkillsContainer.getBoundingClientRect();
+
+const centerXTech = techContainerRect.width / 2;
+const centerYTech = techContainerRect.height / 2;
+const centerXDS = dsContainerRect.width / 2;
+const centerYDS = dsContainerRect.height / 2;
+// Radius for positioning icons around the text
+const radiusTech = Math.min(centerXTech, centerYTech) + 50;
+const radiusDS = Math.min(centerXDS, centerYDS) + 50;
+
 const totalTechSkills = techSkillsItems.length;
 const totalDsSkills = dsSkillsItems.length;
 
@@ -74,6 +81,7 @@ function positionItemsInCircle(items, centerX, centerY, radius) {
         item.style.top = `${y}px`;
     });
 }
+
 
 // Position the tech skills items
 positionItemsInCircle(techSkillsItems, centerXTech, centerYTech, radiusTech);

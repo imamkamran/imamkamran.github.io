@@ -278,64 +278,72 @@
 
     .skills-container {
         display: flex;
-        gap: 20px;
+        flex-wrap: wrap;
         font-family: Helvetica;
         font-weight: bold;
         align-items: center;
+        justify-content: space-around;
         text-align: center;
         text-wrap: wrap;
     }
-  
-    .techSkills-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    
+    .techSkills-container, .dsSkills-container {
         position: relative;
-        left: 5%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 300px;
         height: 300px;
-        border-radius: 50%;
-        display: flex;
     }
-    
-    #techSkills-list {
+
+    .techSkills-centered, .dsSkills-centered {
+            position: absolute;
+            top: 50%;  /* Position from the top */
+            left: 50%;  /* Position from the left */
+            transform: translate(-50%, -50%);  /* Center it exactly */
+            font-size: 24px;
+            font-weight: bold;
+            font-family: Helvetica;
+            color: #ededed;
+            border-radius: 50%;
+            background-color: #404040;
+            width: 4em;  /* Set an equal width and height */
+            height: 4em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.2em;
+            text-align: center;
+            z-index: 1;
+    }
+
+    .techSkills-list, .dsSkills-list {
         list-style-type: none;
-        margin: 0;
-        padding: 0;
         position: relative;
         width: 100%;
         height: 100%;
     }
     
-    #techSkills-list li {
+    .techSkills-list li, .dsSkills-list li {
         position: absolute;
-        transform: translate(-50%, -50%);
         background-color: #8b8b8b;
         color: #ededed;
-        padding: 10px;
         border-radius: 50%;
         text-align: center;
         cursor: pointer;
-        width: 50px;
-        height: 50px;
+        width: 5em;
+        height: 5em;
+        line-height: 5em;
     }
 
-    #techSkills-list li i {
-        font-size: 24px;  /* Adjust icon size */
+    #jira img, #react img, #mongo img, #html img, #css img, #python img, #r img, #sql img, #powerBI img, #snowflake img, #spotfire img, #tableau img {
+        position: relative;
+        top: 0.8em;
     }
 
-    .techSkills-centered {
-        position: absolute;
-        top: 40%;  /* Position from the top */
-        left: 75%;  /* Position from the left */
-        transform: translate(-50%, -50%);  /* Center it exactly */
-        font-size: 24px;
-        font-weight: bold;
-        font-family: Helvetica;
-        color: #ededed;
-        border-radius: 100%;
-        background-color: #404040;
-        padding: 40px;
+    #js i, #github i, #node i {
+        position: relative;
+        top: 0.3em;
     }
 
     .engSkills-container {
@@ -347,7 +355,7 @@
         background-color: #404040;
     }
     
-    #engSkills-list {
+    .engSkills-list {
         list-style-type: none;
         margin: 0;
         padding: 0;
@@ -360,7 +368,7 @@
         gap: 0px;
     }
     
-    #engSkills-list li {
+    .engSkills-list li {
         position: relative;
         color: #ededed;
         padding: 10px;
@@ -376,7 +384,7 @@
         box-sizing: border-box; /* Ensures padding is included in the width */
     }
 
-    #engSkills-list li i {
+    .engSkills-list li i {
         font-size: 24px;  /* Adjust icon size */
     }
 
@@ -414,68 +422,12 @@
         border-radius: 5px 0 0 5px;
     }
 
-    .dsSkills-container {
-        position: relative;
-        width: 300px;
-        height: 300px;
-        left: 15%;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    #dsSkills-list {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        position: relative;
-        width: 100%;
-        height: 100%;
-    }
-    
-    #dsSkills-list li {
-        position: absolute;
-        background-color: #8b8b8b;
-        transform: translate(-50%, -50%);
-        color: #ededed;
-        padding: 10px;
-        border-radius: 50%;
-        text-align: center;
-        cursor: pointer;
-        font-size: 16px;
-        width: 50px;
-        height: 50px;
-    }
-
-    #dsSkills-list li i {
-        font-size: 24px;  /* Adjust icon size */
-    }
-
-    .dsSkills-centered {
-        position: absolute;
-        top: 40%;  
-        left: 200%; 
-        transform: translate(-50%, -50%);
-        font-size: 24px;
-        font-weight: bold;
-        font-family: Helvetica;
-        color: #ededed;
-        border-radius: 50%;
-        background-color: #404040;
-        padding: 40px;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-    }
-    
     /* Show the text when the parent skill is hovered over */
     .skill-text {
         display: none;
         position: absolute;
         top: 70px; /* Position below the icon */
         left: 50%;
-        transform: translateX(-50%);
         background-color: #ededed;
         color: #2b2b2b;
         padding: 5px;
@@ -483,26 +435,13 @@
         white-space: nowrap;
         font-size: 14px;
     }
-    /* Show the text when the parent skill is hovered over */
-    #techSkills-list li:hover .skill-text {
+
+    .techSkills-list li:hover .skill-text, .dsSkills-list li:hover .skill-text,  .engSkills-list li:hover .skill-text {
         display: flex;
         font-weight:normal;
         z-index: 1;
-        transform: scale(1.2);
     }
-
-    #engSkills-list li:hover .skill-text {
-        display: flex;
-        font-weight: normal;
-        z-index: 1;
-    }
-
-    #dsSkills-list li:hover .skill-text {
-        display: flex;
-        font-weight: normal;
-        z-index: 1;
-    }
-
+    
     .carousel-container {
         position: relative;
         width: 100%;
@@ -675,11 +614,20 @@
 
     .skills-container {
         flex-direction: column; /* Stack the circles vertically */
+        justify-content: center;
         align-items: center;
     }
-    #engSkills-list {
+
+    .techSkills-container {
+        margin-bottom: 150px;
+    }
+    .dsSkills-container {
+        margin-top: 150px;
+    }
+
+    .engSkills-list {
         flex-direction: column; /* Stack the circles vertically */
-        align-items: center;
+        align-items: left;
     }
 
     .license-container {
