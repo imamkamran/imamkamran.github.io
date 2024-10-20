@@ -2,14 +2,13 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 1px 1.2%; /* Control header padding */
+        padding: 1px 1.2%;
         background-color: #2b2b2b;
         color: #ededed;
         position: relative;
         top: 0;
         z-index: 0;
-        border-bottom: 2px solid #0398b3;
-        height: 16.5%; /* Set a fixed height for the header */
+        height: auto;
         box-sizing: border-box;
         margin-bottom: 35px;
     }
@@ -77,7 +76,7 @@
         line-height: 1.5;
     }
     .logo {
-        width: 65%;
+        width: 15vw;
         height: auto;
         cursor: pointer;
         position: relative;
@@ -118,13 +117,13 @@
         color: #ededed;
         padding: 8px 12px;
         text-decoration: none;
-        display: block;
+        display: flex;
         text-align: left;
     }
 
     /* Show the dropdown content when hovering */
     .dropdown:hover .dropdown-content {
-        display: block;
+        display: flex;
     }
 
     /* Hover effect on dropdown items */
@@ -141,21 +140,20 @@
         flex-wrap: wrap; 
         justify-content: flex-end;
         position: relative;
-        top: 50px;
-        left: 42px;
-        margin-right: 20px;
+        top: 2.5vw;
+        left: 2.1vw;
       }
       .links li {
         display: inline-block;
-        padding: 2px 15px;
-        margin: 0 2px;
+        padding: .1em 0.9em;
+        margin: 0 0.1em;
         border-top: 2px solid #0398b3;
         border-left: 2px solid #0398b3;
         border-right: 2px solid #0398b3;
         border-top-left-radius: 15px;
         border-top-right-radius: 5px;
         transition: background-color 0.3s ease;
-        height: 107%;
+        height: auto;
       }
       .links a {
         text-decoration: none;
@@ -572,8 +570,19 @@
 /* Media Queries */
 @media (max-width: 1300px) {
     /* Hide the desktop links and show the hamburger icon */
+    header {
+        flex-direction: column; /* Stack items in header */
+        align-items: flex-start; /* Align items to start */
+    }
+
     .links-container {
+        justify-content: center; /* Center links on smaller screens */
+        margin: 1vw 0; /* Adjust margin */
         display: none;
+    }
+
+    .links li {
+        margin: 0.5em 0; /* Increase margin for spacing */
     }
 
     .hamburger {
